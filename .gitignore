@@ -1,0 +1,30 @@
+# PyCharm 설정
+.idea 
+
+# VS Code 설정
+.vscode/
+
+# Node.js
+node_modules/
+
+# SQLite 데이터베이스
+*.db
+*.sqlite3
+myapi.db
+
+# Python 캐시
+*.pyc 
+__pycache__ 
+
+# Python 가상환경
+.venv/
+venv/
+myapi/
+
+# 환경변수 및 비밀정보
+.env
+.env.*
+!.env.example
+
+# 로그 파일
+*.log
