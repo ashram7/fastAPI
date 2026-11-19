@@ -1,10 +1,8 @@
-# PyCharm 설정
-.idea 
-
-# VS Code 설정
+# PyCharm / VS Code 설정
+.idea/
 .vscode/
 
-# Node.js
+# Node.js (frontend)
 node_modules/
 
 # SQLite 데이터베이스
@@ -13,13 +11,12 @@ node_modules/
 myapi.db
 
 # Python 캐시
-*.pyc 
-__pycache__ 
+__pycache__/
+*.py[cod]
 
-# Python 가상환경
+# Python 가상환경 (프로젝트 안에 만든 경우)
 .venv/
 venv/
-myapi/
 
 # 환경변수 및 비밀정보
 .env

@@ -9,6 +9,15 @@ import models
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+# migrations/env.py  - config = context.config 아래에 추가
+# database.py 파일에 데이터베이스 연결 주소를 저장한 변수(SQLALCHEMY_DATABASE_URL) 가져오기
+from database import SQLALCHEMY_DATABASE_URL
+config.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
+# config: Alembic 설정 객체
+# set_main_option(): Alembic의 기본 설정 항목 값을 변경하는 메서드
+# "sqlalchemy.url": 데이터베이스 연결 주소를 지정하는 설정 항목
+# SQLALCHEMY_DATABASE_URL: 실제 데이터베이스 연결 주소
+# 즉, Alembic 설정의 sqlalchemy.url에 sqlite:///./myapi.db를 지정하는 것
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -60,7 +69,7 @@ def run_migrations_online() -> None:
 
     """
     connectable = engine_from_config(
-        config.get_section(config.config_ini_section),
+        config.get_section(config.config_ini_section, {} ),
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
     )
