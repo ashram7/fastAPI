@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from domain.question.question_schema import QuestionCreate, QuestionUpdate
 from sqlalchemy import and_
 from models import Question, User, Answer
@@ -31,7 +31,7 @@ def get_question(db: Session, question_id: int):
 def create_question(db: Session, question_create: QuestionCreate, user: User):
     db_question = Question(subject=question_create.subject,
                            content=question_create.content,
-                           create_date=datetime.now(),
+                           create_date=datetime.utcnow() + timedelta(hours=9),
                            user=user)
     db.add(db_question)
     db.commit()
