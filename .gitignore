@@ -8,7 +8,7 @@ node_modules/
 # SQLite 데이터베이스
 *.db
 *.sqlite3
-myapi.db
+!myapi.db
 
 # Python 캐시
 __pycache__/
